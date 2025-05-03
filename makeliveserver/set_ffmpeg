@@ -1,0 +1,8 @@
+// Ubuntu/Debian 또는 대부분의 Linux 배포판
+ffmpeg: '/usr/bin/ffmpeg',
+
+// macOS (Homebrew로 설치한 경우)
+ffmpeg: '/usr/local/bin/ffmpeg',
+
+// Windows (예시 경로, 실제 경로로 수정 필요)
+ffmpeg: 'C:\\ffmpeg\\bin\\ffmpeg.exe',
