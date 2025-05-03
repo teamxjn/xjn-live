@@ -1,0 +1,6 @@
+# 서버 실행
+node app.js
+
+# 또는 nodemon 사용 (개발 시 자동 재시작)
+# npm install -g nodemon
+# nodemon app.js
