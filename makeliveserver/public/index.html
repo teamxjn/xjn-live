@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실시간 스트리밍 플랫폼</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>실시간 스트리밍</h1>
+      <div class="user-info">
+        <input type="text" id="username" placeholder="사용자 이름 입력" maxlength="20">
+      </div>
+    </header>
+
+    <main>
+      <div class="video-container">
+        <div id="no-stream-message">
+          <p>현재 방송 중인 스트림이 없습니다.</p>
+          <p>OBS Studio에서 다음 설정으로 방송을 시작하세요:</p>
+          <ul>
+            <li>서버: rtmp://localhost:1935/live</li>
+            <li>스트림 키: stream</li>
+          </ul>
+        </div>
+        <video id="video-player" controls autoplay playsinline hidden></video>
+      </div>
+
+      <div class="chat-container">
+        <div class="chat-header">
+          <h2>실시간 채팅</h2>
+          <span id="viewers-count">시청자: 0명</span>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+          <input type="text" id="message-input" placeholder="메시지를 입력하세요..." disabled>
+          <button id="send-button" disabled>전송</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="stream-info">
+      <div class="status" id="stream-status">오프라인</div>
+      <div class="stream-title" id="stream-title">스트림 제목</div>
+    </div>
+  </div>
+
+  <!-- 스크립트 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.1.5/hls.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
