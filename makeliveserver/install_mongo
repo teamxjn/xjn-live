@@ -1,0 +1,16 @@
+# Ubuntu/Debian
+wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo systemctl start mongod
+sudo systemctl enable mongod
+
+# macOS
+brew tap mongodb/brew
+brew install mongodb-community
+brew services start mongodb-community
+
+# Windows
+# MongoDB 웹사이트에서 MongoDB Community Server를 다운로드하여 설치
+# https://www.mongodb.com/try/download/community
